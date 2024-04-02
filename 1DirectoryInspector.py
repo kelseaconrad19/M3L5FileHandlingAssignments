@@ -24,25 +24,25 @@ Task 2: File Size Reporter:
 """
 
 
-# def get_file_size(file_path):
-#     try:
-#         file_info = os.stat(file_path)
-#         return file_info.st_size
-#     except FileNotFoundError:
-#         print(f"File {file_path} not found.")
-#         return None
-#
-#
-# directory_path = input("Please enter the directory path: ")
-# if os.path.exists(directory_path) and os.path.isdir(directory_path):
-#     for f in os.listdir(directory_path):
-#         full_path = os.path.join(directory_path, f)
-#         if os.path.isfile(full_path):
-#             file_size = get_file_size(full_path)
-#             if file_size is not None:
-#                 print(f"Name: {f}, Size: {file_size} bytes")
-# else:
-#     print("The path provided does not exist or is not a directory.")
+def get_file_size(file_path):
+    try:
+        file_info = os.stat(file_path)
+        return file_info.st_size
+    except FileNotFoundError:
+        print(f"File {file_path} not found.")
+        return None
+
+
+directory_path = input("Please enter the directory path: ")
+if os.path.exists(directory_path) and os.path.isdir(directory_path):
+    for f in os.listdir(directory_path):
+        full_path = os.path.join(directory_path, f)
+        if os.path.isfile(full_path):
+            file_size = get_file_size(full_path)
+            if file_size is not None:
+                print(f"Name: {f}, Size: {file_size} bytes")
+else:
+    print("The path provided does not exist or is not a directory.")
 
 
 """
