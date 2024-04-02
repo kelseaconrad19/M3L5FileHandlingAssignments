@@ -7,8 +7,12 @@ Task 1: Directory Inspector:
 """
 import os
 
-dir_list = os.listdir("/Users/kelseaconrad/Desktop")
-print(dir_list)
+directory_path = input("Enter the directory path: ")
+try:
+    dir_list = os.listdir(directory_path)
+    print(dir_list)
+except FileNotFoundError:
+    print("File is not found.")
 
 
 """
